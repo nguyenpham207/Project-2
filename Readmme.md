@@ -3,7 +3,7 @@ Project 2 Planning.!!!!!!!!!
 
 
 OVERVIEW:
-BOBA DRINKS is a fullstack applicatiopn where users could create their own drinks flavors or use one of the provided drink recipes. User can also favorite the one that they liked.
+BOBA DRINKS is a fullstack applicatiopn where it will storged up to more than 10 boba drinks for the users to see. Any User of this website can be able to select and edit their own drinks. Each user will have the ability to create and save their own drinks to their own dashboard or look up the provided recipes from the website to follow and make their own drink.
 
 
 
@@ -12,17 +12,17 @@ BOBA DRINKS is a fullstack applicatiopn where users could create their own drink
 
 User Story:
 
-sign up
+-sign up
 
-sign in
+-sign in
 
-save the drink that they like
+-save the drink that they like
 
-use one of the drink recipes
+-use one of the drink recipes
 
-comment to one of the boba repcipes
+-comment to one of the boba repcipes
 
-DELATE 
+-DELETE 
 
 EDIT
 
