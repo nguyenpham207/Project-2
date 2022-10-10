@@ -11,12 +11,19 @@ BOBA DRINKS is a fullstack applicatiopn where users could create their own drink
 
 
 User Story:
+
 sign up
+
 sign in
+
 save the drink that they like
+
 use one of the drink recipes
+
 comment to one of the boba repcipes
+
 DELATE 
+
 EDIT
 
 ![diagram!](diagrams.png)
