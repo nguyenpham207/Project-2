@@ -24,6 +24,15 @@ User Story:
 
 -DELETE 
 
-EDIT
+-EDIT
 
 ![diagram!](diagrams.png)
+
+SCHEDULE
+
+
+- Monday- setiing up all the servers 
+- Tuesday- create a list of drinks and ingredients
+- Wednesday - work on users
+- Thursday - frontend
+- Friday review
