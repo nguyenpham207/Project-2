@@ -12,26 +12,35 @@ BOBA DRINKS is a fullstack applicatiopn where it will storged up to more than 10
 
 User Story:
 
--sign up
+- sign up
 
--sign in
+- sign in
 
--save the drink that they like
+- save the boba recipes
 
--use one of the drink recipes
+- comment recipes
 
--comment to one of the boba repcipes
+- delete recipes
 
--DELETE 
+- edit recipes
 
--EDIT
+- detail of recipes
 
-![diagram!](diagrams.png)
+- create recipes
+
+- view your own dashboard 
+
+- list of all recipes
+
+- change password
+
+
+![diagram!](ERD.png)
 
 SCHEDULE
 
 
-- Monday- setiing up all the servers 
+- Monday- setting up all the servers 
 - Tuesday- create a list of drinks and ingredients
 - Wednesday - work on users
 - Thursday - frontend
