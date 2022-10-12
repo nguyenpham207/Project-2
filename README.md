@@ -7,7 +7,7 @@ BOBA DRINKS is a fullstack applicatiopn where it will storged up to more than 10
 
 
 
-![picture!](wire.jpg)
+![picture!](./assets/wire.jpg)
 
 
 User Story:
@@ -35,7 +35,7 @@ User Story:
 - change password
 
 
-![diagram!](ERD.png)
+![diagram!](./assets/ERD.png)
 
 SCHEDULE
 
