@@ -2,63 +2,49 @@
 // Import Dependencies
 ///////////////////////////////////////
 const mongoose = require('./connection')
-const Fruit = require('./fruit')
+const Boba = require('./boba')
 
-// Here, we're going to set up a seed script
-// this will seed our database for us, so we have some starting resources
-// This script will be run, with the command in the terminal `npm run seed`
 
-// router.get("/seed", (req, res) => {
-//     // array of starter fruits
-
-//     // Delete every fruit in the db
-//     Fruit.deleteMany({})
-//         .then(() => {
-//             // seed with the starter fruits array
-//             Fruit.create(startFruits)
-//                 .then(data => {
-//                     res.json(data)
-//                 })
-//         })
-// })
-
-///////////////////////////////////////
-// Seed Script code
-///////////////////////////////////////
-// first we need our connection saved to a variable for easy reference
 const db = mongoose.connection
 
 db.on('open', () => {
     // bring in the array of starter fruits
-    const startFruits = [
-        { name: "Orange", color: "orange", readyToEat: false },
-        { name: "Grape", color: "purple", readyToEat: false },
-        { name: "Banana", color: "orange", readyToEat: false },
-        { name: "Strawberry", color: "red", readyToEat: false },
-        { name: "Coconut", color: "brown", readyToEat: false},
+    const startBobas = [
+        { name: "Berry Peach Tea", recipes: "1/2 oz, 1/2 oz, 8 oz fresh brewed tea, ice", description: 'none'},
+        { name: "Cinnamon Peach Tea", recipes: "6 mL, 1/2 oz, 7 oz fresh brewed tea", description: 'none'},
+        { name: "Sparkling Peach Tea", recipes: " 1 oz of peach syrup,4 oz hibicus tea, 3 oz club soda", description: 'none' },
+        { name: "Dragon Fruit Green Tea", recipes: "3/4 oz of dragon fruit syrup, 6 oz green tea", description: 'none' },
+        { name: "Refresher", recipes: "1 wedge watermelon, 5 oz green tea, 1 oz watermelon syrup, 2 oz lemon-lime soda", description: 'none'},
+        { name: "Black Currant Tea", recipes: "3/4 oz blackcurrant syrup, fresh brewed tea", description: 'none' },
+        { name: "Orchard peach Snap", recipes: "1 1/4 oz peach tea concentrate, 1 pump ginger concentrated flavor, 6 oz club soda", description: 'none'},
+        { name: "Amaretto Peach Tea", recipes: " 2 pumps peach concentrated flavor, 1/2 oz Amaretto syrup, fill with fresh brewed tea", description: 'none' },
+        { name: "Watermelon Mint Tea", recipes: "1 oz watermelon syrup, 14 oz hot tea, 4 mint leaves", description: 'none' },
+        { name: "Pumpkin Chai Tea Latte", recipes: "1 oz pumpkin spice syrup, 1 organic chai tea, filled with steamed milk", description: 'none'}
+
+        ,
     ]
 
     // delete all the existing fruits
-    Fruit.deleteMany({ owner: null })
-        .then(deletedFruits => {
-            console.log('this is what .deleteMany returns', deletedFruits)
+    Boba.deleteMany({ owner: null })
+        .then(deletedBobas => {
+            console.log('this is what .deleteMany returns', deletedBobas)
 
-            // create a bunch of new fruits from startFruits
-            Fruit.create(startFruits)
+
+            Boba.create(startbobas)
                 .then(data => {
                     console.log('here are the newly created fruits', data)
-                    // always close connection to the db
+                    
                     db.close()
                 })
                 .catch(error => {
                     console.log(error)
-                    // always close connection to the db
+                    
                     db.close()
                 })
         })
         .catch(error => {
             console.log(error)
-            // always close connection to the db
+           
             db.close()
         })
 })
