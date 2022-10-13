@@ -9,7 +9,7 @@ const User = require('./user')
 // destructure the schema and model constructors from mongoose
 const { Schema, model } = mongoose
 
-const bobaSchema = new Schema(
+const bobaRecipeSchema = new Schema(
 	{
 		name: String,
 		recipes: String,
@@ -24,9 +24,9 @@ const bobaSchema = new Schema(
 	{ timestamps: true }
 )
 
-const Example = model('Boba', bobaSchema)
+const bobaRecipe = model('Boba', bobaRecipeSchema)
 
 /////////////////////////////////
 // Export our Model
 /////////////////////////////////
-module.exports = Boba
+module.exports = bobaRecipe

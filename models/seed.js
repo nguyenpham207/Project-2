@@ -2,14 +2,14 @@
 // Import Dependencies
 ///////////////////////////////////////
 const mongoose = require('./connection')
-const Boba = require('./boba')
+const bobaRecipe = require('./boba')
 
 
 const db = mongoose.connection
 
 db.on('open', () => {
     // bring in the array of starter fruits
-    const startBobas = [
+    const startBoba = [
         { name: "Berry Peach Tea", recipes: "1/2 oz, 1/2 oz, 8 oz fresh brewed tea, ice", description: 'none'},
         { name: "Cinnamon Peach Tea", recipes: "6 mL, 1/2 oz, 7 oz fresh brewed tea", description: 'none'},
         { name: "Sparkling Peach Tea", recipes: " 1 oz of peach syrup,4 oz hibicus tea, 3 oz club soda", description: 'none' },
@@ -25,12 +25,12 @@ db.on('open', () => {
     ]
 
     // delete all the existing fruits
-    Boba.deleteMany({ owner: null })
-        .then(deletedBobas => {
-            console.log('this is what .deleteMany returns', deletedBobas)
+    bobaRecipe.deleteMany({})
+        .then(deletedBoba => {
+            console.log('this is what .deleteMany returns', deletedBoba)
 
 
-            Boba.create(startbobas)
+            bobaRecipe.create(startBoba)
                 .then(data => {
                     console.log('here are the newly created fruits', data)
                     
