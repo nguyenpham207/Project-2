@@ -4,7 +4,7 @@
 require("dotenv").config() // make env variables available
 const express = require("express")
 const middleware = require('./utils/middleware')
-const bobaRouter = require('./controllers/bobaControllers')
+const BobaRouter = require('./controllers/bobaControllers')
 const UserRouter = require('./controllers/userControllers')
 const User = require("./models/user")
 // SEE MORE DEPENDENCIES IN ./utils/middleware.js
@@ -22,7 +22,7 @@ middleware(app)
 ////////////////////
 
 app.use('/auth', UserRouter)
-app.use('/boba', bobaRouter)
+app.use('/boba', BobaRouter)
 
 app.get('/', (req, res) => {
     const { username, userId, loggedIn } = req.session
