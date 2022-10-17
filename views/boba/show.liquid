@@ -1,0 +1,12 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+<div class="container-md">
+    <article>
+        <h3>Recipes: {{ boba.name }}</h3>
+        <h6>Description: {{ boba.description }}</h6>
+        {% if boba.owner == userId %}
+        {% endif %}
+    </article>
+</div>
+
+{% endblock %}

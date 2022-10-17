@@ -8,23 +8,23 @@
             <input 
                 type="text" 
                 name="title" 
-                placeholder="{{ example.title }}"
-                value="{{ example.title }}"
+                placeholder="{{ boba.title }}"
+                value="{{ boba.title }}"
                 class="form-control"
             >
             <label class="form-label">Body:</label>
             <input 
                 type="text" 
                 name="body" 
-                placeholder="{{ example.body }}" 
-                value="{{ example.body }}" 
+                placeholder="{{ boba.body }}" 
+                value="{{ boba.body }}" 
                 class="form-control"
             >
             <label class="form-label">Amount:</label>
             <input 
                 type="number" 
                 name="amount"
-                value="{{ example.amount }}"
+                value="{{ boba.amount }}"
                 class="form-control"
             >
             <label class="form-label">Ready:</label>
@@ -32,7 +32,7 @@
                 type="checkbox" 
                 name="ready" 
                 class="form-check-input"
-                {% if example.ready %}
+                {% if boba.ready %}
                     checked
                 {% endif %}
             >

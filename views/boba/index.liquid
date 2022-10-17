@@ -1,24 +1,24 @@
 {% layout 'layout.liquid'%}
 {% block content %}
 <div>
-    <h2 class="display-6">All Examples</h2>
+    <h2 class="display-6">Recipes</h2>
     <div class="row">
         {% for boba in bobas %}
         <div class="card" style="width: 18rem;">
             <h5 class="card-header">{{ boba.title }}</h5>
             <div class="card-body">
                 <h5 class="card-title">
-                    Ready?: {{ boba.name }}
+                    {{ boba.name }}
                 </h5>
-                <p class="card-text">
-                    Body: {{ boba.recipes }}
-                </p>
-                <p class="card-text">
-                    Amount: {{ boba.description }}
-                </p>
+                
+        
                 <a href="/boba/{{ boba.id }}" class="btn btn-info">
                     View {{ boba.title }}
                 </a>
+                <a href="/boba/{{ boba.id }}" class="btn btn-info">
+                    Favorite {{ boba.title }} 
+                </a>
+                
             </div>
         </div>
         {% endfor %}

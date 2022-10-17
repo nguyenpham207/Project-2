@@ -20,6 +20,7 @@ router.post("/:bobaId", (req, res) => {
     if (req.session.loggedIn) {
         // we want to adjust req.body so that the author is automatically assigned
         req.body.author = req.session.userId
+        // const username = req.session.username
     } else {
         res.sendStatus(401)
     }
@@ -44,10 +45,10 @@ router.post("/:bobaId", (req, res) => {
 
 // DELETE
 // only the author of the comment can delete it
-router.delete('/delete/:bobaId/:commId', (req, res) => {
+router.delete('/delete/:bobaId/:commentControllersId', (req, res) => {
     // isolate the ids and save to vars for easy ref
     const bobaId = req.params.bobaId 
-    const commId = req.params.commId
+    const commentControllersId = req.params.commentControllersId
     // get the fruit
     Boba.findById(bobaId)
         .then(boba => {
@@ -64,7 +65,7 @@ router.delete('/delete/:bobaId/:commId', (req, res) => {
                     // here's another built in method
                     theComment.remove()
                     boba.save()
-                    res.redirect(`/fruits/${fruit.id}`)
+                    res.redirect(`/bobas/${boba.id}`)
                     // return the saved fruit
                     // return fruit.save()
                 } else {

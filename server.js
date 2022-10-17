@@ -24,9 +24,17 @@ middleware(app)
 app.use('/auth', UserRouter)
 app.use('/boba', BobaRouter)
 
+app.get('/error', (req, res) => {
+    const error = req.query.error || 'This Page Does Not Exist'
+    const { username, loggedIn, userId } = req.session
+    res.render('error.liquid', { error, username, loggedIn, userId })
+})
+
+
 app.get('/', (req, res) => {
     const { username, userId, loggedIn } = req.session
-	res.render('index.liquid', { loggedIn, username, userId })
+	res.redirect('/auth/login')
+	// res.render('index.liquid', { loggedIn, username, userId })
 })
 
 app.get('/error', (req, res) => {

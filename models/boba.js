@@ -15,8 +15,7 @@ const bobaSchema = new Schema(
 		name: String,
 		recipes: String,
 		description: String,
-		
-
+		// owner: String,
 		
 		owner: {
 			type: Schema.Types.ObjectID,
