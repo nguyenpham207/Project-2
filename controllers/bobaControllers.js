@@ -1,6 +1,7 @@
 // Import Dependencies
 const express = require('express')
 const Boba = require('../models/boba')
+const User = require('../models/user')
 
 // // Create router
 const router = express.Router()
@@ -100,13 +101,38 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
 	const bobaId = req.params.id
 	Boba.findById(bobaId)
-		.then(bobas => {
+		.then(boba => {
             const {username, loggedIn, userId} = req.session
 			// console.log('Boba Obj: ', bobas);
 			// console.log('UserId:   ', userId);
-			res.render('boba/show', { bobas, username, loggedIn, userId })
+			res.render('boba/show', { boba, username, loggedIn, userId })
 		})
 		.catch((error) => {
+			res.redirect(`/error?error=${error}`)
+		})
+})
+
+router.get('/remove/:id', (req, res) => {
+	const bobaId = req.params.id
+	const username = req.session.username
+	const loggedIn = req.session.loggedIn
+	Boba.findById(bobaId)
+		.then(boba => {
+			User.findOne({ username: username })
+				.then(user => {
+					const favBobaIndex = user.favorite.findIndex(aBoba => aBoba.name === boba.name);
+
+					// if boba is already on the list, remove
+					if (favBobaIndex >= 0) {
+						user.favorite.splice(favBobaIndex, 1);
+					}
+					return user.save();
+				})
+		})
+		.then(boba => {
+			res.redirect('/auth/favorite')
+		})
+		.catch(error => {
 			res.redirect(`/error?error=${error}`)
 		})
 })

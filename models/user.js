@@ -1,5 +1,6 @@
 // import what I need
 const { Schema, model } = require('./connection.js')
+const Boba = require('./boba');
 
 // create the schema
 const UserSchema = new Schema(
@@ -12,7 +13,8 @@ const UserSchema = new Schema(
 		password: { 
 			type: String, 
 			required: true 
-		}
+		},
+		favorite: [Boba]
 	},
 	{ timestamps: true }
 )

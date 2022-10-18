@@ -36,7 +36,7 @@ router.post("/:bobaId", (req, res) => {
         })
         .then(boba => {
             // res.status(200).json({ fruit: fruit })
-            res.redirect(`/bobas/${boba.id}`)
+            res.redirect(`/boba/${boba.id}`)
         })
         // do something else if it doesn't work
         //  --> send some kind of error depending on what went wrong

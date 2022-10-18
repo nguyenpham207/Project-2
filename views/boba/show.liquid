@@ -1,9 +1,12 @@
+{%- comment -%} res.render('boba/show', { boba, username, loggedIn, userId }) {%- endcomment -%}
 {% layout 'layout.liquid' %}
 {% block content %}
 <div class="container-md">
     <article>
-        <h3>Recipes: {{ boba.name }}</h3>
-        <h6>Description: {{ boba.description }}</h6>
+        <h1>Recipes:</h1> <p>{{ boba.recipes }}</p>
+        <h3>Description: {{ boba.description }}</h3>
+
+          <input type="text" comment="username" placeholder="Comment" class="form-control" required>
         {% if boba.owner == userId %}
         {% endif %}
     </article>

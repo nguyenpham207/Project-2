@@ -3,6 +3,7 @@
 ////////////////////////////////////////////
 const express = require('express')
 const User = require('../models/user')
+const Boba = require('../models/boba')
 const bcrypt = require('bcryptjs')
 
 ////////////////////////////////////////////
@@ -93,6 +94,50 @@ router.get('/logout', (req, res) => {
 	req.session.destroy(() => {
 		res.redirect('/')
 	})
+})
+
+const temp = (aBoba) => {
+
+};
+
+router.get('/favorite', (req, res) => {
+	const username = req.session.username
+	const loggedIn = req.session.loggedIn
+		User.findOne({username : username})
+			.then(user => {
+				const bobas = user.favorite
+				res.render('boba/favorite', {bobas, username, loggedIn})
+			})
+})
+
+router.get('/favorite/:id', (req, res) => {
+	const bobaId = req.params.id
+	const username = req.session.username
+	const loggedIn = req.session.loggedIn
+	Boba.findById(bobaId)
+		.then(boba => {
+			User.findOne({ username: username })
+				.then(user => {
+					const favBobaIndex = user.favorite.findIndex(aBoba => aBoba.name === boba.name);
+					
+					// if boba is already on the list, remove
+					if (favBobaIndex >= 0) {
+						user.favorite.splice(favBobaIndex, 1);
+					// otherwise, all to the favorite list
+					} else {
+						user.favorite.push(boba);
+					}
+					
+					console.log('My Info: ', user);
+					return user.save();
+				})
+		})
+		.then(boba => {
+			res.redirect('/boba')
+		})
+		.catch(error => {
+			res.redirect(`/error?error=${error}`)
+		})
 })
 
 // Export the Router
