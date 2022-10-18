@@ -15,6 +15,7 @@ const bobaSchema = new Schema(
 		name: String,
 		recipes: String,
 		description: String,
+		image: String,
 		// owner: String,
 		
 		owner: {

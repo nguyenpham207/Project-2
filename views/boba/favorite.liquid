@@ -1,11 +1,12 @@
 {% layout 'layout.liquid'%}
 {% block content %}
 <div>
-    <h2 class="display-6">Recipes</h2>
+    <h2 class="display-6">My Favorites</h2>
     <div class="row">
         {% for boba in bobas %}
         <div class="card" style="width: 18rem;">
             <h5 class="card-header">{{ boba.title }}</h5>
+             <img src="{{boba.image}}">
             <div class="card-body">
                 <h5 class="card-title">
                     {{ boba.name }}

@@ -96,9 +96,6 @@ router.get('/logout', (req, res) => {
 	})
 })
 
-const temp = (aBoba) => {
-
-};
 
 router.get('/favorite', (req, res) => {
 	const username = req.session.username
@@ -128,7 +125,7 @@ router.get('/favorite/:id', (req, res) => {
 						user.favorite.push(boba);
 					}
 					
-					console.log('My Info: ', user);
+					// console.log(user);
 					return user.save();
 				})
 		})
