@@ -103,8 +103,8 @@ router.get('/:id', (req, res) => {
 	Boba.findById(bobaId)
 		.then(boba => {
             const {username, loggedIn, userId} = req.session
-			// console.log('Boba Obj: ', bobas);
-			// console.log('UserId:   ', userId);
+			// console.log(bobas);
+			// console.log(userId);
 			res.render('boba/show', { boba, username, loggedIn, userId })
 		})
 		.catch((error) => {

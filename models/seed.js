@@ -10,8 +10,8 @@ const db = mongoose.connection
 db.on('open', () => {
     // bring in the array of starter fruits
     const startBobas = [
-        { name: "Berry Peach Tea", recipes: "1/2 oz, 1/2 oz, 8 oz fresh brewed tea, ice", description: 'none', owner: null, image: '/assets/pictures/fbefbbc6-b560-477d-980a-003dd4a76b07-1_1.png'},
-        { name: "Cinnamon Peach Tea", recipes: "6 mL, 1/2 oz, 7 oz fresh brewed tea", description: 'none', owner: null, image: '/assets/pictures/Cinnamon Peach Tea.png'},
+        { name: "Berry Peach Tea", recipes: "1/2 oz Monin Blackberry Syrup, 1/2 oz monin White PEach Syrup, 8 oz fresh brewed tea, ice", description: 'none', owner: null, image: '/assets/pictures/fbefbbc6-b560-477d-980a-003dd4a76b07-1_1.png'},
+        { name: "Cinnamon Peach Tea", recipes: "6 mL Monin Cinnanmon Syrup, 1/2 oz, 7 oz fresh brewed tea", description: 'none', owner: null, image: '/assets/pictures/Cinnamon Peach Tea.png'},
         { name: "Sparkling Peach Tea", recipes: " 1 oz of peach syrup,4 oz hibicus tea, 3 oz club soda", description: 'none', owner: null, image:'/assets/pictures/sparkling peach tea.webp' },
         { name: "Dragon Fruit Green Tea", recipes: "3/4 oz of dragon fruit syrup, 6 oz green tea", description: 'none', owner: null, image:'/assets/pictures/Dragon Fruit Green Tea.png' },
         { name: "Mango Dragon Fruit", recipes: "3/4 oz dragon fruit syrup, 1 pump mango concentrated flavor, 3 oz green tea, 3 oz lemonade", description: 'none', owner: null, image: '/assets/pictures/mango dragon fruit.png'},
