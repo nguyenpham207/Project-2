@@ -21,7 +21,7 @@ db.on('open', () => {
         { name: "Watermelon Sparkling Mint", recipes: "5 leaf mint, 1 1/4 oz, 3 mL, ice, 6 oz sparkling water", description: 'none', owner: null, image: '/assets/pictures/watermelon sparkling mint.webp' },
         { name: "Pumpkin Chai Tea Latte", recipes: "1 oz pumpkin spice syrup, 1 organic chai tea, filled with steamed milk", description: 'none', owner: null, image: '/assets/pictures/pumpkin_chai_tea_latte.png'},
     ]
-
+//Be more aware of your indentation and whitespace throughout your code
     // delete all the existing fruits
     Boba.deleteMany({ owner: null })
         .then(deletedBobas => {

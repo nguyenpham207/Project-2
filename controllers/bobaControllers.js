@@ -5,7 +5,7 @@ const User = require('../models/user')
 
 // // Create router
 const router = express.Router()
-
+//You should try to remove any unused code if you can
 // router.use((req, res, next) => {
 // 	// checking the loggedIn boolean of our session
 // 	if (req.session.loggedIn) {
