@@ -9,7 +9,7 @@ const User = require('./user')
 // destructure the schema and model constructors from mongoose
 const { Schema, model } = mongoose
 
-const bobaSchema = new Schema(
+const bobaSchema = new Schema( //Make sure you capitalize the schema name
 	{
 
 		name: String,
